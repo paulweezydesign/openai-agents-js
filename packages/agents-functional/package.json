@@ -1,0 +1,45 @@
+{
+  "name": "@openai/agents-functional",
+  "version": "0.0.1",
+  "description": "Functional, composable APIs on top of OpenAI Agents SDK for JS/TS.",
+  "author": "OpenAI <support@openai.com>",
+  "repository": "https://github.com/openai/openai-agents-js",
+  "homepage": "https://openai.github.io/openai-agents-js/",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.mjs"
+    }
+  },
+  "scripts": {
+    "prebuild": "tsx ../../scripts/embedMeta.ts",
+    "build": "tsc",
+    "build-check": "tsc --noEmit -p ./tsconfig.test.json",
+    "test": "vitest run -c ../../vitest.config.ts --dir ./test"
+  },
+  "dependencies": {
+    "@openai/agents-core": "workspace:*",
+    "@openai/agents-openai": "workspace:*",
+    "@openai/agents-realtime": "workspace:*",
+    "@openai/zod": "npm:zod@^3.25.40"
+  },
+  "devDependencies": {
+    "typescript": "~5.6.3"
+  },
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "openai",
+    "agents",
+    "functional",
+    "composable"
+  ]
+}
