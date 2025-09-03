@@ -1,0 +1,63 @@
+{
+  "name": "functional-openai-agents",
+  "version": "1.0.0",
+  "description": "Functional JavaScript implementation of OpenAI Agents SDK with modern syntax and composability",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./core": {
+      "import": "./dist/core/index.js", 
+      "types": "./dist/core/index.d.ts"
+    },
+    "./tools": {
+      "import": "./dist/tools/index.js",
+      "types": "./dist/tools/index.d.ts"
+    },
+    "./composition": {
+      "import": "./dist/composition/index.js",
+      "types": "./dist/composition/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest",
+    "lint": "eslint src/**/*.ts",
+    "format": "prettier --write src/**/*.ts",
+    "demo": "node demo.js",
+    "example:basic": "node dist/examples/basic-usage.js",
+    "example:advanced": "node dist/examples/advanced-composition.js",
+    "example:streaming": "node dist/examples/streaming-example.js",
+    "example:migration": "node dist/examples/python-to-js-migration.js"
+  },
+  "dependencies": {
+    "openai": "^5.0.1",
+    "zod": "^3.25.40",
+    "debug": "^4.4.0"
+  },
+  "devDependencies": {
+    "@types/debug": "^4.1.12",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.0.0",
+    "eslint": "^9.0.0",
+    "prettier": "^3.0.0"
+  },
+  "keywords": [
+    "openai",
+    "agents",
+    "ai",
+    "functional",
+    "composition",
+    "modern-javascript"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
