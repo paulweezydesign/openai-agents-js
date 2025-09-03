@@ -42,7 +42,14 @@
     "clear:deps": "rm -rf node_modules && pnpm -r exec rm -rf node_modules",
     "local-npm:reset": "rm -rf .cache/verdaccio/storage",
     "local-npm:start": "verdaccio --config verdaccio-config.yml",
-    "local-npm:publish": "pnpm -r publish --registry http://localhost:4873 --force --no-git-checks"
+    "local-npm:publish": "pnpm -r publish --registry http://localhost:4873 --force --no-git-checks",
+    "example:minimal": "node --loader ts-node/esm src/examples/minimal.ts",
+    "example:tools": "node --loader ts-node/esm src/examples/tools.ts",
+    "example:structured": "node --loader ts-node/esm src/examples/structured.ts",
+    "example:guardrails": "node --loader ts-node/esm src/examples/guardrails.ts",
+    "example:handoffs": "node --loader ts-node/esm src/examples/handoffs.ts",
+    "example:streaming": "node --loader ts-node/esm src/examples/streaming.ts",
+    "example:multi-agent": "node --loader ts-node/esm src/examples/multi-agent.ts"
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.4",
